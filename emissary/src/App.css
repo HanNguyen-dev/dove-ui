@@ -7,19 +7,22 @@
   pointer-events: none;
 }
 
+.page-container {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.application-header {
+  margin: 2rem 0 2rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
   }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
 .App-link {
