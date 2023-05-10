@@ -42,6 +42,11 @@ export const jobColumns = [
     key: 'appliedDate',
   },
   {
+    title: 'Completed Date',
+    dataIndex: 'completedDate',
+    key: 'completedDate',
+  },
+  {
     title: 'Status',
     dataIndex: 'status',
     key: 'status',

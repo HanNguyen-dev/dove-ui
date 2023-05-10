@@ -8,6 +8,7 @@ export type Job = {
   languages: string,
   experience: string,
   appliedDate: string,
+  completedDate: string,
   status: string,
   companyName: string,
   url: string,
