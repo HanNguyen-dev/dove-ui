@@ -1,0 +1,9 @@
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <span>{{ title$ | async }}</span>
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button label="Jobs" icon="pi pi-file" class="mr-2" styleClass="p-button-secondary p-button-text p-button-sm" [routerLink]="['/job-applications']"></p-button>
+    <p-button label="Companies" icon="pi pi-building" styleClass="p-button-secondary p-button-text p-button-sm" [routerLink]="['/companies']"></p-button>
+  </div>
+</p-toolbar>
