@@ -1,0 +1,1 @@
+export const MS_TO_DAY = (1000 * 60 * 60 * 24);

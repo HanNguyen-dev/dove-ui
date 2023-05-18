@@ -1,0 +1,50 @@
+<div class="card job-container">
+  <div *ngIf="loading$ | async else tableTemplate" class="spinner">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <ng-template #tableTemplate>
+    <p-table
+      *ngIf="(jobs$ | async) as jobs"
+      [value]="jobs"
+      [tableStyle]="{ 'max-width': '100rem', 'margin': '2rem' }"
+      [styleClass]="''"
+      [paginator]="true"
+      [rows]="10"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Job title</th>
+          <th>Frontend</th>
+          <th>Backend</th>
+          <th>Database</th>
+          <!-- <th>Cloud providers</th>
+          <th>Languages</th> -->
+          <th pSortableColumn="experience">Years of experience<p-sortIcon field="experience"></p-sortIcon></th>
+          <th>Applied Date</th>
+          <th>Completed Date</th>
+          <th pSortableColumn="status">Status<p-sortIcon field="status"></p-sortIcon></th>
+          <th pSortableColumn="companyName">Company<p-sortIcon field="companyName"></p-sortIcon></th>
+          <th pSortableColumn="duration">Duration<p-sortIcon field="duration"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-job>
+        <tr>
+            <td><a href="{{ job.url }}" target="_blank">{{ job.title }}</a></td>
+            <td>{{ job.frontend }}</td>
+            <td>{{ job.backend }}</td>
+            <td>{{ job.storeDb }}</td>
+            <!-- <td>{{ job.cloud }}</td>
+            <td>{{ job.languages }}</td> -->
+            <td>{{ job.experience }}</td>
+            <td>{{ job.appliedDate }}</td>
+            <td>{{ job.completedDate }}</td>
+            <td>{{ job.status }}</td>
+            <td>{{ job.companyName }}</td>
+            <td>{{ job.duration }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-template>
+</div>
