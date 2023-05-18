@@ -10,6 +10,8 @@ import { NavbarModule } from './features/navbar/navbar.module';
 import { jobsReducer } from './features/jobs/state/jobs.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { JobsEffect } from './features/jobs/state/jobs.effects';
+import { companiesReducer } from './features/companies/state/companies.reducer';
+import { CompaniesEffects } from './features/companies/state/companies.effects';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,8 @@ import { JobsEffect } from './features/jobs/state/jobs.effects';
     SplitButtonModule,
     BreadcrumbModule,
     NavbarModule,
-    StoreModule.forRoot({ jobs: jobsReducer }),
-    EffectsModule.forRoot(JobsEffect)
+    StoreModule.forRoot({ jobs: jobsReducer, companies: companiesReducer }),
+    EffectsModule.forRoot(JobsEffect, CompaniesEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
