@@ -3,6 +3,14 @@
     <p-progressSpinner></p-progressSpinner>
   </div>
   <ng-template #tableTemplate>
+    <div class="summary">
+      <p-accordion [activeIndex]="0" *ngIf="jobsSummary$ | async as summary">
+        <p-accordionTab header="Summary">
+          <div>Rejected: {{summary.rejected}}</div>
+          <div>Applied: {{summary.applied}}</div>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
     <p-table
       *ngIf="(jobs$ | async) as jobs"
       [value]="jobs"
@@ -15,6 +23,7 @@
     >
       <ng-template pTemplate="header">
         <tr>
+          <th>Id</th>
           <th>Job title</th>
           <th>Frontend</th>
           <th>Backend</th>
@@ -31,6 +40,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-job>
         <tr>
+            <td>{{ job.jobId }}</td>
             <td><a href="{{ job.url }}" target="_blank">{{ job.title }}</a></td>
             <td>{{ job.frontend }}</td>
             <td>{{ job.backend }}</td>

@@ -3,6 +3,7 @@ import { JobsRoutingModule } from "./jobs-routing.module";
 import { JobsComponent } from "./jobs.component";
 import { TableModule } from "primeng/table";
 import { ButtonModule } from "primeng/button";
+import { AccordionModule } from "primeng/accordion";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { CommonModule } from "@angular/common";
 
@@ -11,6 +12,7 @@ import { CommonModule } from "@angular/common";
     JobsRoutingModule,
     TableModule,
     ButtonModule,
+    AccordionModule,
     ProgressSpinnerModule,
     CommonModule,
   ],
