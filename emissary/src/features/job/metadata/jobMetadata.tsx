@@ -3,8 +3,8 @@ export const jobColumns = [
     title: 'Job title',
     dataIndex: 'title',
     key: 'title',
-    render: ({text, link}: { text: string, link: string }) =>
-      link ? <a href={link} target='_blank' rel="noreferrer" >{text}</a> : text
+    render: ({ text, link }: { text: string, link: string }) =>
+      link ? <a href={link} target='_blank' rel="noreferrer noopener" >{text}</a> : text
   },
   {
     title: 'Frontend',
